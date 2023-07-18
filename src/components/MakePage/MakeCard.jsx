@@ -4,7 +4,7 @@ const StyledMakeCard = styled.div`
     width: 358px;
     height: 538px;
     position: fixed;
-    top: 72px;
+    top: 94px;
     border-radius: 8px;
     padding: 2rem;
     background-color: white;
