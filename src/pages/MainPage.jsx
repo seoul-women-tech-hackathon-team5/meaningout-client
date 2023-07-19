@@ -6,6 +6,4 @@ const MainPage = () => {
     );
 }
 
-// test : github OMG
-
 export default MainPage; 
