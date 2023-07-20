@@ -1,9 +1,10 @@
+import React from 'react';
 import styled from 'styled-components';
 
 const MainPage = () => {
   return (
     <MainContainer>
-      <Content>MainPage</Content>
+      MainPage
     </MainContainer>
   );
 }
@@ -12,16 +13,11 @@ const MainContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 390px;
-  height: 844px;
-  margin: 0 auto;
+  width: 100vw; /* 100% 화면 너비 */
+  height: 100vh; /* 100% 화면 높이 */
   background-color: red;
-`;
-
-const Content = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: white;
+  font-size: 24px; /* 텍스트 크기 */
+  color: black; /* 텍스트 색상 */
 `;
 
 export default MainPage;
