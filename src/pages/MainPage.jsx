@@ -3,21 +3,32 @@ import styled from 'styled-components';
 
 const MainPage = () => {
   return (
-    <MainContainer>
-      MainPage
-    </MainContainer>
+    <PageWrapper>
+      <RedScreen>
+        MainPage
+      </RedScreen>
+    </PageWrapper>
   );
 }
 
-const MainContainer = styled.div`
+const PageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw; /* 100% 화면 너비 */
-  height: 100vh; /* 100% 화면 높이 */
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+`;
+
+const RedScreen = styled.div`
+  width: 390px;
+  height: 844px;
   background-color: red;
-  font-size: 24px; /* 텍스트 크기 */
-  color: black; /* 텍스트 색상 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: black;
 `;
 
 export default MainPage;
