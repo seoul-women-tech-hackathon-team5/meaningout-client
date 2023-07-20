@@ -13,13 +13,15 @@ const MainContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  width: 390px;
+  height: 844px;
+  margin: 0 auto;
   background-color: red;
 `;
 
 const Content = styled.div`
   width: 100%;
-  max-width: 844px;
+  height: 100%;
   background-color: white;
 `;
 
