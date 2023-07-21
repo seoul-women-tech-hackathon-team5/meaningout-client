@@ -42,7 +42,7 @@ const MainPage = () => {
           next={fetchMoreData}
           hasMore={true}
           loader={<h4>Loading...</h4>}
-          style={{ overflow: 'hidden' }}
+          style={{ overflow: 'hidden', marginTop: '70px' }}
         >
           {cards.map((card, index) => (
             <Card key={index} style={{ backgroundColor: card.color }} />
@@ -66,9 +66,10 @@ const generateRandomCards = (count) => {
 };
 
 const Card = styled.div`
-  width: 350px;
-  height: 530px;
+  width: 300px;
+  height: 500px;
   margin: 8px;
+  margin-top: 20px;
 `;
 
 const PageWrapper = styled.div`
