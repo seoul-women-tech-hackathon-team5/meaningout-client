@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 const MainPage = () => {
+  const redScreenRef = useRef(null);
   const [cards, setCards] = useState(generateRandomCards(10));
 
   const fetchMoreData = () => {
@@ -10,16 +11,25 @@ const MainPage = () => {
   };
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      fetchMoreData();
-    }, 1500);
-
-    return () => clearTimeout(timeout);
+    redScreenRef.current.addEventListener('scroll', handleScroll);
+    return () => {
+      redScreenRef.current.removeEventListener('scroll', handleScroll);
+    };
   }, []);
+
+  const handleScroll = () => {
+    const redScreen = redScreenRef.current;
+    if (
+      redScreen.scrollTop + redScreen.clientHeight >=
+      redScreen.scrollHeight - 10
+    ) {
+      fetchMoreData();
+    }
+  };
 
   return (
     <PageWrapper>
-      <RedScreen>
+      <RedScreen ref={redScreenRef}>
         <LogoText>LOGO</LogoText>
         MainPage
         <Menu>
@@ -78,6 +88,7 @@ const RedScreen = styled.div`
   height: 100vh;
   background-color: red;
   position: relative;
+  overflow-y: scroll;
 `;
 
 const LogoText = styled.div`
