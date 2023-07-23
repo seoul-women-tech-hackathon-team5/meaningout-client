@@ -118,7 +118,7 @@ const LogoText = styled.div`
 
 const Menu = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: blue;
   width: 100%;
