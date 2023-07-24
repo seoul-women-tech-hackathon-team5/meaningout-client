@@ -1,21 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
-import InfiniteScroll from 'react-infinite-scroll-component';
 
 const MainPage = () => {
   const redScreenRef = useRef(null);
   const [cards, setCards] = useState(generateRandomCards(10));
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const fetchMoreData = () => {
     setCards((prevCards) => [...prevCards, ...generateRandomCards(10)]);
   };
-
-  useEffect(() => {
-    redScreenRef.current.addEventListener('scroll', handleScroll);
-    return () => {
-      redScreenRef.current.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   const handleScroll = () => {
     const redScreen = redScreenRef.current;
@@ -27,29 +20,32 @@ const MainPage = () => {
     }
   };
 
+  const handleYellowRectangleClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <PageWrapper>
-      <RedScreen ref={redScreenRef}>
+      <RedScreen ref={redScreenRef} onScroll={handleScroll}>
         <LogoContainer>
           <LogoText>LOGO</LogoText>
         </LogoContainer>
-        <InfiniteScroll
-          dataLength={cards.length}
-          next={fetchMoreData}
-          hasMore={true}
-          loader={<h4>Loading...</h4>}
-        >
-          <CardContainer>
-            {cards.map((card, index) => (
-              <Card key={index} style={{ backgroundColor: card.color }} />
-            ))}
-          </CardContainer>
-        </InfiniteScroll>
+        <YellowRectangle onClick={handleYellowRectangleClick} />
+        <CardContainer>
+          {cards.map((card, index) => (
+            <Card key={index} style={{ backgroundColor: card.color }} />
+          ))}
+        </CardContainer>
         <Menu>
-          <MenuButton>HOME</MenuButton>
-          <MenuButton>MAKE CARD</MenuButton>
-          <MenuButton>MY PAGE</MenuButton>
+          <MenuButton>카드 제작</MenuButton>
+          <MenuButton>홈</MenuButton>
+          <MenuButton>마이 페이지</MenuButton>
         </Menu>
+        {isModalOpen && <Modal onClose={closeModal} />}
       </RedScreen>
     </PageWrapper>
   );
@@ -72,6 +68,7 @@ const Card = styled.div`
   height: 500px;
   margin: 8px;
   margin-top: 20px;
+  border-radius: 8px;
 `;
 
 const PageWrapper = styled.div`
@@ -92,8 +89,6 @@ const RedScreen = styled.div`
   background-color: red;
   position: relative;
   overflow-y: scroll;
-
-  /* Hide the scrollbar */
   scrollbar-width: none;
   -ms-overflow-style: none;
   &::-webkit-scrollbar {
@@ -145,6 +140,50 @@ const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  transform: translateY(100px);
+`;
+
+const YellowRectangle = styled.div`
+  width: 360px;
+  height: 40px;
+  background-color: yellow;
+  margin: 8px;
+  margin-top: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+`;
+
+const Modal = ({ onClose }) => {
+  return (
+    <ModalOverlay onClick={onClose}>
+      <ModalContent>
+        <h1>Modal Content</h1>
+        <p>OZAOZAOZAOZAOZA OZAOZAOZAOZAOZA OZAOZAOZAOZAOZA</p>
+        <button onClick={onClose}>Close</button>
+      </ModalContent>
+    </ModalOverlay>
+  );
+};
+
+const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+`;
+
+const ModalContent = styled.div`
+  background-color: purple;
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
 `;
 
 export default MainPage;
