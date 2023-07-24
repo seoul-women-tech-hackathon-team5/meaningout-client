@@ -6,10 +6,11 @@ import { useNavigate } from 'react-router-dom';
 
 const StyledCertification = styled.div`
     width: 390px;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: white;
 
     .certificate-container {
         display: flex;

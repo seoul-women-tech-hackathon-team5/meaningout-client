@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import Header from '../components/MainPage/Header';
 import MessageBox from '../components/MainPage/MeassageBox';
-import BottomNav from '../components/UI/BottomNav';
 
 const StyledMain = styled.div`
     width: 390px;
@@ -16,7 +15,6 @@ const MainPage = () => {
         <StyledMain>
             <Header/>
             <MessageBox/>
-            <BottomNav/>
         </StyledMain>
     );
 }

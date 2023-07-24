@@ -4,10 +4,11 @@ import InputBox from '../components/MakePage/InputBox';
 
 const StyledMake = styled.div`
     width: 390px;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: white;
 
     .title{
         font-size: 22px;

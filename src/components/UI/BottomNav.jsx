@@ -11,6 +11,7 @@ const StyledBottomNav = styled.div`
     justify-content: center;
     border-top-style: solid;
     border-top-width: 0.5px;
+    z-index: -10;
 
     button { 
         width: 8.125rem;
