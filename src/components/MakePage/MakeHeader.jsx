@@ -2,23 +2,33 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
 const StyledMakeHeader = styled.div`
-    height: 4rem;
-    position: fixed;
-    top: 0;
+width: 390px;
+height: 71px;
+margin-bottom: 28px;
 
-    display: flex;
-    justify-content: flex-start;
-    padding: 19px;
-    background: pink;
-    z-index: 10px;
+display: flex;
+justify-content: start;
+align-items: center;
+padding: 16px;
+
+border-bottom-style: solid;
+border-bottom-width: 0.5px;
+
+.header-title {
+    margin-left: 85px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
 `
 
 export default function MakeHeader () {
     return(
         <StyledMakeHeader>
-            <Link to="/main">
+            <Link to="/certificate">
                 <img src="/assets/icons/arrow-back.svg"/>
             </Link>
+            <div className='header-title'>오자 카드 만들기</div>
         </StyledMakeHeader>
     )
 }
