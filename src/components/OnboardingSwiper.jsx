@@ -14,19 +14,31 @@ const SwiperContainer = styled.div`
     align-items: center;
 `;
 
+const Title = styled.div`
+    font-size: 20px;
+    font-weight: 600;
+    color: #2294FF;
+    margin-bottom: 20px;
+`
+
+const Text = styled.div`
+    font-size: 16px;
+    color: #707070;
+`
+
 export default function OnboardingSwiper () {
     const slides = [
         {
             img: '/assets/img/temporary-img.svg',
             title: '우리 동네 선한 가게를 찾아봐요',
             text: `우리 동네 선한 가게를 이용하셨나요?
-            오자와 함께 우리 동네 선한 가게를 알아봐요`,
+오자와 함께 우리 동네 선한 가게를 알아봐요`,
         },
         {
             img: '/assets/img/temporary-img.svg',
             title: '선한 가게 추천 카드를 만들어 봐요',
             text: `매장 이용 후 선한 가게 추천 카드를 만들어 보세요
-            당신의 카드로 큐레이션을 완성하는 즐거움`,
+당신의 카드로 큐레이션을 완성하는 즐거움`,
         },
         {
             img: '/assets/img/temporary-img.svg',
@@ -65,11 +77,11 @@ export default function OnboardingSwiper () {
                 <SwiperSlide key={index}>
                     <SwiperContainer>
                         <img src={slide.img} alt={slide.text} />
-                        {slide.title}
+                        <Title>{slide.title}</Title>
                         {slide.text === '시작하기' ? (
                             <button onClick={handleStart}>{slide.text}</button>
                         ) : (
-                            slide.text
+                            <Text>{slide.text}</Text>
                         )}
                     </SwiperContainer>
                 </SwiperSlide>
