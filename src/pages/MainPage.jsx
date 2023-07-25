@@ -153,18 +153,6 @@ const YellowRectangle = styled.div`
   cursor: pointer;
 `;
 
-const Modal = ({ onClose }) => {
-  return (
-    <ModalOverlay onClick={onClose}>
-      <ModalContent>
-        <h1>Modal Content</h1>
-        <p>OZAOZAOZAOZAOZA OZAOZAOZAOZAOZA OZAOZAOZAOZAOZA</p>
-        <button onClick={onClose}>Close</button>
-      </ModalContent>
-    </ModalOverlay>
-  );
-};
-
 const ModalOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -184,6 +172,41 @@ const ModalContent = styled.div`
   border-radius: 8px;
   color: white;
   text-align: center;
+  width: 390px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  grid-template-rows: auto repeat(5, 1fr);
+
+  &:before {
+    content: '지역ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ';
+    font-weight: bold;
+    color: black;
+    grid-column: 1 / span 5;
+  }
+
+  button {
+    width: 60px;
+    height: 30px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+  }
 `;
+
+const Modal = ({ onClose }) => {
+  return (
+    <ModalOverlay onClick={onClose}>
+      <ModalContent>
+        {Array.from({ length: 25 }, (_, index) => (
+          <button key={index}>오자오자</button>
+        ))}
+      </ModalContent>
+    </ModalOverlay>
+  );
+};
 
 export default MainPage;
