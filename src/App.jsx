@@ -6,6 +6,7 @@ import MakePage from "./pages/MakePage";
 import CertificationPage from "./pages/CertificationPage";
 import PreviewPage from "./pages/PreviewPage";
 import BottomNav from "./components/UI/BottomNav";
+import CharacterPage from "./pages/CharacterPage";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
             <Route path="/main" element={<MainPage/>}/>
             <Route path="/certificate" element={<CertificationPage/>}/>
             <Route path="/make" element={<MakePage/>}/>
+            <Route path="/character" element={<CharacterPage/>}/>
             <Route path="/preview" element={<PreviewPage/>}/>
             <Route path="/my" element={<MyPage/>}/>
         </Routes>

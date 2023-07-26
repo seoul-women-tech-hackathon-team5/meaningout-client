@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import CertificateHeader from '../components/CertificationPage.jsx/CertificateHeader';
-import Receipt from '../components/CertificationPage.jsx/Receipt';
+import CertificateHeader from '../components/CertificationPage/CertificateHeader';
+import Receipt from '../components/CertificationPage/Receipt';
 import { useNavigate } from 'react-router-dom';
 
 
