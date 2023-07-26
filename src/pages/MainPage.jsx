@@ -34,7 +34,9 @@ const MainPage = () => {
         <LogoContainer>
           <LogoText>LOGO</LogoText>
         </LogoContainer>
-        <YellowRectangle onClick={handleYellowRectangleClick} />
+        <YellowRectangleContainer>
+          <YellowRectangle onClick={handleYellowRectangleClick} />
+        </YellowRectangleContainer>
         <CardContainer>
           {cards.map((card, index) => (
             <Card key={index} style={{ backgroundColor: card.color }} />
@@ -101,7 +103,7 @@ const LogoContainer = styled.div`
   position: sticky;
   top: 0;
   background-color: red;
-  z-index: 1;
+  z-index: 2;
 `;
 
 const LogoText = styled.div`
@@ -109,6 +111,30 @@ const LogoText = styled.div`
   font-size: 20px;
   font-weight: bold;
   padding: 20px;
+`;
+
+const CardContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  transform: translateY(100px);
+`;
+
+const YellowRectangleContainer = styled.div`
+  width: 100%;
+  position: sticky;
+  top: 40px; /* Adjust the top position to push it below the Logo */
+  z-index: 2;
+`;
+
+const YellowRectangle = styled.div`
+  width: 360px;
+  height: 40px;
+  background-color: yellow;
+  margin: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  position: fixed;
 `;
 
 const Menu = styled.div`
@@ -133,23 +159,6 @@ const MenuButton = styled.button`
   color: white;
   border: none;
   font-size: 16px;
-  cursor: pointer;
-`;
-
-const CardContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  transform: translateY(100px);
-`;
-
-const YellowRectangle = styled.div`
-  width: 360px;
-  height: 40px;
-  background-color: yellow;
-  margin: 8px;
-  margin-top: 20px;
-  border-radius: 8px;
   cursor: pointer;
 `;
 
