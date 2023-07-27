@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
-const StyledMakeHeader = styled.div`
+const StyledCertificateHeader = styled.div`
 width: 390px;
 height: 71px;
 margin-bottom: 28px;
@@ -22,13 +22,13 @@ border-bottom-width: 0.5px;
 
 `
 
-export default function MakeHeader () {
+export default function CertificateHeader () {
     return(
-        <StyledMakeHeader>
-            <Link to="/certificate">
+        <StyledCertificateHeader>
+            <Link to="/main">
                 <img src="/assets/icons/arrow-back.svg"/>
             </Link>
-            <div className='header-title'>오자 카드 만들기</div>
-        </StyledMakeHeader>
+            <div className='header-title'>영수증 인증하기</div>
+        </StyledCertificateHeader>
     )
 }

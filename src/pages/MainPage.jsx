@@ -1,26 +1,22 @@
-import React from 'react';
 import styled from 'styled-components';
+import Header from '../components/MainPage/Header';
+import MessageBox from '../components/MainPage/MeassageBox';
+
+const StyledMain = styled.div`
+    width: 390px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
 
 const MainPage = () => {
-  return (
-    <MainContainer>
-      <Content>MainPage</Content>
-    </MainContainer>
-  );
+    return (
+        <StyledMain>
+            <Header/>
+            <MessageBox/>
+        </StyledMain>
+    );
 }
-
-const MainContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: red;
-`;
-
-const Content = styled.div`
-  width: 100%;
-  max-width: 844px;
-  background-color: white;
-`;
 
 export default MainPage;
