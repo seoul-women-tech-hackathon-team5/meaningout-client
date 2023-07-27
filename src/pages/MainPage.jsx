@@ -123,7 +123,7 @@ const CardContainer = styled.div`
 const YellowRectangleContainer = styled.div`
   width: 100%;
   position: sticky;
-  top: 40px; /* Adjust the top position to push it below the Logo */
+  top: 40px;
   z-index: 2;
 `;
 
@@ -181,11 +181,13 @@ const ModalContent = styled.div`
   border-radius: 8px;
   color: white;
   text-align: center;
-  width: 390px;
+  width: 360px;
+  height: 320px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 56px);
   gap: 10px;
-  grid-template-rows: auto repeat(5, 1fr);
+  grid-template-rows: auto repeat(5, 30px) auto;
+  position: relative;
 
   &:before {
     content: '지역ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ';
@@ -195,7 +197,7 @@ const ModalContent = styled.div`
   }
 
   button {
-    width: 60px;
+    width: 56px;
     height: 30px;
     background-color: white;
     color: black;
@@ -204,15 +206,27 @@ const ModalContent = styled.div`
     font-size: 14px;
     cursor: pointer;
   }
+
+  .filler {
+    grid-column: 1 / span 5;
+    visibility: hidden;
+  }
 `;
+
+const words = [
+  '강남구', '강동구', '강북구', '강서구', '관악구', '광진구', '구로구', '금천구', '노원구',
+  '도봉구', '동대문구', '동작구', '마포구', '서대문구', '서초구', '성동구', '성북구', '송파구',
+  '양천구', '영등포구', '용산구', '은평구', '종로구', '중구', '중랑구',
+];
 
 const Modal = ({ onClose }) => {
   return (
     <ModalOverlay onClick={onClose}>
       <ModalContent>
-        {Array.from({ length: 25 }, (_, index) => (
-          <button key={index}>오자오자</button>
+        {words.map((word, index) => (
+          <button key={index}>{word}</button>
         ))}
+        <div className="filler" />
       </ModalContent>
     </ModalOverlay>
   );
