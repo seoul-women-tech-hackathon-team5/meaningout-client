@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import MyHeader from '../components/MyPage/MyHeader';
+import BottomNav from '../components/UI/BottomNav';
 
 const StyledMyPage = styled.div`
     width: 390px;
@@ -14,6 +15,7 @@ const MyPage = () => {
         <StyledMyPage>
             <MyHeader/>
             <div>MyPage</div>
+            <BottomNav type="my"/>
         </StyledMyPage>
     );
 }
