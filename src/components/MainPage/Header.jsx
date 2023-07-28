@@ -21,7 +21,7 @@ const StyledHeader = styled.div`
 
 export default function Header() {
     // Area 토글 관리
-    const [currentTitle, setCurrentTitle] = useState("종로구");
+    const [currentTitle, setCurrentTitle] = useState("영등포구");
     
     const handleContentClick = (clickedTitle) => {
         setCurrentTitle(clickedTitle);
