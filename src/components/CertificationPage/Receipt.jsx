@@ -38,7 +38,6 @@ const StyledReceipt = styled.div`
     -moz-user-drag: none;
     -o-user-drag: none;
     user-drag: none;
-    object-fit: fill;
 }
 `
 Receipt.propTypes = {
