@@ -13,7 +13,7 @@ const StyledAreaItem = styled.div`
 
   .toggle-container {
     width: 100px;
-    height: 540px;
+    height: 550px;
     padding: 12px;
     border-radius: 8px;
     font-size: 16px;
@@ -22,6 +22,8 @@ const StyledAreaItem = styled.div`
     background-color: white;
     cursor: pointer;
     border: solid 1px #D9D9D9;
+    position: absolute;
+    z-index: 1;
   }
 
   .toggle-container > div:hover {
