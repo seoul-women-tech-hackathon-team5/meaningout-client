@@ -21,29 +21,16 @@ const StyledCard = styled.div`
   font-size: 24px;
   font-weight: 600;
   color: white;
+
+  ${(props) =>
+    props.content === '영등포구' &&
+    `
+      color: black;
+    `}
 `;
 
-const Card = ({ selectedArea }) => {
-  const [cards, setCards] = useState([]);
-
-  useEffect(() => {
-    // Find the index of the selectedArea in the areaNames array
-    const areaNames = [
-      '강남구', '강동구', '강북구', '강서구', '관악구', '광진구', '구로구', '금천구',
-      '노원구', '도봉구', '동대문구', '동작구', '마포구', '서대문구', '서초구', '성동구',
-      '성북구', '송파구', '양천구', '영등포구', '용산구', '은평구', '종로구', '중구', '중랑구'
-    ];
-
-    const selectedAreaIndex = areaNames.indexOf(selectedArea);
-
-    if (selectedAreaIndex !== -1) {
-      const newCards = Array.from({ length: selectedAreaIndex + 1 }, (_, index) => areaNames[index]);
-      setCards(newCards);
-    } else {
-      setCards([]);
-    }
-  }, [selectedArea]);
-
+const Card = () => {
+  const [cards, setCards] = useState([1, 2, 3, 4, 5]);
   const observerRef = useRef(null);
 
   useEffect(() => {
@@ -67,8 +54,7 @@ const Card = ({ selectedArea }) => {
   const handleObserver = (entries) => {
     const target = entries[0];
     if (target.isIntersecting) {
-      // When the target is intersecting (reached the bottom), add more cards in an infinite loop
-      const newCardId = cards[cards.length - 1];
+      const newCardId = cards[cards.length - 1] + 1;
       setCards((prevCards) => [...prevCards, newCardId]);
     }
   };
@@ -78,7 +64,6 @@ const Card = ({ selectedArea }) => {
   };
 
   useEffect(() => {
-    // If there are more than 10 cards, remove the first card after a short delay
     if (cards.length > 10) {
       const timer = setTimeout(removeFirstCard, 1000);
       return () => clearTimeout(timer);
@@ -88,8 +73,10 @@ const Card = ({ selectedArea }) => {
   return (
     <>
       <CardContainer>
-        {cards.map((cardContent) => (
-          <StyledCard key={cardContent}>{cardContent}</StyledCard>
+        {cards.map((cardId) => (
+          <StyledCard key={cardId} content="영등포구">
+            영등포구
+          </StyledCard>
         ))}
       </CardContainer>
       <div ref={observerRef} />
