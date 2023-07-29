@@ -13,7 +13,7 @@ const StyledAreaItem = styled.div`
 
   .toggle-container {
     width: 100px;
-    height: 550px;
+    height: 570px;
     padding: 12px;
     border-radius: 8px;
     font-size: 16px;
