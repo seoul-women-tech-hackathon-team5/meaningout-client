@@ -9,6 +9,7 @@ const StyledHeader = styled.div`
     // position: fixed;
     // top: 0;
     margin-bottom: 28px;
+    background-color: white; /* Set background color to white */
 
     display: flex;
     flex-direction: column;

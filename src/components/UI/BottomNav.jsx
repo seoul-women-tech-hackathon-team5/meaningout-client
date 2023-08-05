@@ -14,15 +14,15 @@ const NavBarArticle = styled.article`
   bottom: 0;
   width: 390px;
   height: 83px;
+  background-color: white; /* Set background color to white */
   border-top: 1px solid #D9D9D9;
   border-radius: 0px;
   margin: 0px;
+  z-index: 1; /* Ensure it's above other content */
 `;
 
 const TabMenuUl = styled.ul`
   display: flex;
-  // justify-content: center;
-  // align-items: center;
   width: 100%;
 `;
 
@@ -46,13 +46,13 @@ const SelectP = styled.p`
   color: #2294FF;
 `;
 
-export default function NavBar({type}) {
-
+export default function NavBar({ type }) {
   NavBar.propTypes = {
-    type: PropTypes.oneOf(["people", "make", "my"]).isRequired,
+    type: PropTypes.oneOf(["main", "make", "my"]).isRequired,
   };
 
   const navigate = useNavigate();
+
   return (
     <NavBarArticle>
       <nav>
@@ -77,7 +77,7 @@ export default function NavBar({type}) {
                 navigate("/certificate");
               }}
             >
-              {type === "카드제작" ? (
+              {type === "make" ? (
                 <img src={makeSelectImage} alt="make으로 이동" />
               ) : (
                 <img src={makeImage} alt="make으로 이동" />

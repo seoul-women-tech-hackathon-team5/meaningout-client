@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 const StyledMessageBox  = styled.div`
     width: 334px;
-    height: 140px;
-    background-color: #2294FF;
+    height: 170px;
+    background-color: #558BCF;
     border-radius: 8px;
     z-index: -10;
 
