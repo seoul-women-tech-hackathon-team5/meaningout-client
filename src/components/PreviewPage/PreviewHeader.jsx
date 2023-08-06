@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
-const StyledCertificateHeader = styled.div`
+const StyledPreviewHeader = styled.div`
 width: 390px;
 height: 71px;
 margin-bottom: 28px;
 
 display: flex;
-padding: 18px 128px 18px 16px;
+justify-content: start;
 align-items: center;
-gap: 15px;
+padding: 16px;
 
 border-bottom-style: solid;
 border-bottom-width: 0.5px;
@@ -22,13 +22,13 @@ border-bottom-width: 0.5px;
 
 `
 
-export default function CertificateHeader () {
+export default function PreviewHeader () {
     return(
-        <StyledCertificateHeader>
-            <Link to="/main">
+        <StyledPreviewHeader>
+            <Link to="/character">
                 <img src="/assets/icons/arrow-back.svg"/>
             </Link>
-            <div className='header-title'>영수증 인증하기</div>
-        </StyledCertificateHeader>
+            <div className='header-title'>오자 카드 미리보기</div>
+        </StyledPreviewHeader>
     )
 }

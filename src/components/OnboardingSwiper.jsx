@@ -1,4 +1,4 @@
-import { Pagination} from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -8,6 +8,8 @@ import styled from 'styled-components';
 import "../styles/swiper.css";
 
 const SwiperContainer = styled.div`
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,7 +19,7 @@ const SwiperContainer = styled.div`
 const Title = styled.div`
     font-size: 20px;
     font-weight: 600;
-    color: #2294FF;
+    color: #558BCF;
     margin-bottom: 20px;
 `
 
@@ -26,22 +28,58 @@ const Text = styled.div`
     color: #707070;
 `
 
-export default function OnboardingSwiper () {
+const SubTitle = styled.div`
+    color: #558BCF;
+    text-align: center;
+    font-family: Noto Sans;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 10px;
+`
+
+const FinalSwiper = styled.div`
+    background-color: white;
+`
+
+const T1 = styled.div`
+    color: #558BCF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+`
+
+const T2 = styled.div`
+    color: #558BCF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+`
+
+export default function OnboardingSwiper() {
     const slides = [
         {
-            img: '/assets/img/temporary-img.svg',
-            title: '우리 동네 선한 가게를 찾아봐요',
-            text: `우리 동네 선한 가게를 이용하셨나요?
-오자와 함께 우리 동네 선한 가게를 알아봐요`,
+            img: '/assets/img/onboarding1.png',
+            title: '우리 동네 착한 가게',
+            text: `오자와 함께 우리 동네 착한 가게를 알아보세요`,
         },
         {
-            img: '/assets/img/temporary-img.svg',
-            title: '선한 가게 추천 카드를 만들어 봐요',
-            text: `매장 이용 후 선한 가게 추천 카드를 만들어 보세요
-당신의 카드로 큐레이션을 완성하는 즐거움`,
+            img: '/assets/img/onboarding2.png',
+            title: '추천 카드 만들기',
+            text: `매장 이용 후 추천 카드를 만들어 보세요
+함께 큐레이션을 완성하는 즐거움`,
         },
         {
-            img: '/assets/img/temporary-img.svg',
+            name: 'ozaoza',
+            t1: '서울시와 함께하는',
+            t2: ' 배려와 상생의 도시',
             text: `시작하기`,
         },
     ];
@@ -76,12 +114,19 @@ export default function OnboardingSwiper () {
             {slides.map((slide, index) => (
                 <SwiperSlide key={index}>
                     <SwiperContainer>
-                        <img src={slide.img} alt={slide.text} />
-                        <Title>{slide.title}</Title>
+                        {slide.img && <img src={slide.img} alt={slide.text} />}
+                        {slide.title && <Title>{slide.title}</Title>}
                         {slide.text === '시작하기' ? (
-                            <button onClick={handleStart}>{slide.text}</button>
+                            <FinalSwiper>
+                                <SubTitle>{slide.name}</SubTitle>
+                                <T1>{slide.t1}</T1>
+                                <T2>{slide.t2}</T2>
+                                <button onClick={handleStart}>{slide.text}</button>
+                            </FinalSwiper>
                         ) : (
-                            <Text>{slide.text}</Text>
+                            <>
+                                <Text>{slide.text}</Text>
+                            </>
                         )}
                     </SwiperContainer>
                 </SwiperSlide>

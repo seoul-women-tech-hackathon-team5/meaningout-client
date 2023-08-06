@@ -40,10 +40,11 @@ const TabMenuLink = styled.a`
   align-items: center;
   cursor: pointer;
   color: #AEAEAE;
+  gap: 3px;
 `;
 
 const SelectP = styled.p`
-  color: #2294FF;
+  color: #558BCF;
 `;
 
 export default function NavBar({ type }) {
