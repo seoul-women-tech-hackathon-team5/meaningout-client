@@ -1,5 +1,9 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useRecoilState } from "recoil";
+import { NameAtom } from '../../recoil/NameAtom';
+import { KeyWordAtom } from '../../recoil/KewordAtom';
+import { PraiseAtom } from '../../recoil/PraiseAtom';
+
 
 const StyledInputBox = styled.div`
     .input-title{
@@ -48,9 +52,9 @@ const StyledInputBox = styled.div`
 `
 
 export default function InputBox () {
-    const [name, setName] = useState('');
-    const [keywords, setKeywords] = useState('');
-    const [praise, setPraise] = useState('');
+    const [name, setName] = useRecoilState(NameAtom);
+    const [keywords, setKeywords] = useRecoilState(KeyWordAtom);
+    const [praise, setPraise] = useRecoilState(PraiseAtom);
 
     const maxNameLength = 22; // 최대 이름 길이
     const maxKeywordsLength = 22; // 최대 키워드 길이
@@ -79,6 +83,10 @@ export default function InputBox () {
       }
       setPraise(value);
     };
+
+    console.log("가게 이름:", name);
+    console.log("키워드:", keywords);
+    console.log("칭찬 한 마디:", praise);
 
     return(
         <StyledInputBox>
