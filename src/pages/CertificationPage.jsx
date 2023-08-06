@@ -33,7 +33,7 @@ const StyledCertification = styled.div`
         height: 48px;
         border-radius: 8px;
         border: 0;
-        background-color: #2294FF;
+        background-color: #558BCF;
         font-size: 16px;
         color: white;
         cursor: pointer;

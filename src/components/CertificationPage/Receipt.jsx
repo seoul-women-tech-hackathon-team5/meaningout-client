@@ -15,7 +15,6 @@ const StyledReceipt = styled.div`
     padding: 6px;
     padding-bottom: 57px;
     transform: translateY(45px);
-    border: solid 1px #2294FF;
     border-radius: 8px;
 }
 

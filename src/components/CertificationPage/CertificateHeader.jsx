@@ -7,9 +7,9 @@ height: 71px;
 margin-bottom: 28px;
 
 display: flex;
-justify-content: start;
+padding: 18px 128px 18px 16px;
 align-items: center;
-padding: 16px;
+gap: 15px;
 
 border-bottom-style: solid;
 border-bottom-width: 0.5px;

@@ -3,12 +3,27 @@ import styled from 'styled-components';
 const StyledMessageBox  = styled.div`
     width: 334px;
     height: 140px;
-    background-color: #2294FF;
+    border: 1px solid #558BCF;
     border-radius: 8px;
     z-index: -10;
 
     display: flex;
-    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+
+    .today-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #558BCF;
+        font-weight: 600;
+    }
+
+    .number {
+        font-size: 35px;
+        font-weight: 700;
+    }
 
     @property --rotate {
         syntax: "<angle>";
@@ -90,14 +105,6 @@ const StyledMessageBox  = styled.div`
             --rotate: 360deg;
         }
     }      
-
-    .today-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: white;
-        font-weight: 600;
-    }
 `
 
 export default function MessageBox () {
@@ -105,11 +112,11 @@ export default function MessageBox () {
         <StyledMessageBox>
             <div className='today-card'>
                 <div>오늘 들어온 카드</div>
-                <div className='card'>19</div>
+                <div className='number'>40</div>
             </div>
-            <div className='equal'>=</div>
-            <div>
-                {/*  */}
+            <div className='today-card'>
+                <div>함께 하는 착한 가게</div>
+                <div className='number'>152</div>
             </div>
         </StyledMessageBox>
     )

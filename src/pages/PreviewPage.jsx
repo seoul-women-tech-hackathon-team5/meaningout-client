@@ -12,7 +12,6 @@ const StyledPreviewPage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
 `;
 const CardContainer = styled.div`
   width: 334px;
@@ -27,8 +26,8 @@ const EditButton = styled.button`
   width: 165px;
   height: 48px;
   border-radius: 12px;
-  border: 1px solid #2294ff;
-  color: #2294ff;
+  border: 1px solid #558BCF;
+  color: #558BCF;
   margin-bottom: 7px;
   margin-right: 3px;
 `;
@@ -37,8 +36,8 @@ const HomeButton = styled.button`
   width: 165px;
   height: 48px;
   border-radius: 12px;
-  border: 1px solid #2294ff;
-  color: #2294ff;
+  border: 1px solid #558BCF;
+  color: #558BCF;
   margin-bottom: 7px;
 `;
 
@@ -47,7 +46,7 @@ const SaveButton = styled.button`
   height: 48px;
   border-radius: 12px;
   color: white;
-  background-color: #2294ff;
+  background-color: #558BCF;
 `;
 
 const PreviewPage = () => {
