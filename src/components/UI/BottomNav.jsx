@@ -97,7 +97,7 @@ export default function NavBar({ type }) {
               ) : (
                 <img src={myImage} alt="my로 이동" />
               )}
-              {type === "my" ? <SelectP>마이 페이지</SelectP> : <p>마이 페이지</p>}
+              {type === "my" ? <SelectP>서비스 소개</SelectP> : <p>서비스 소개</p>}
             </TabMenuLink>
           </TabMenuLi>
         </TabMenuUl>
