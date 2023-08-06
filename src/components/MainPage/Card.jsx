@@ -5,14 +5,14 @@ const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 330px;
 `;
 
 const StyledCard = styled.div`
   width: 150px;
   height: 200px;
-  background-color: #558BCF;
-  margin: 10px;
+  background-color: white;
+  margin: 20px;
   border-radius: 8px;
   display: flex;
   padding: 20px;
@@ -27,6 +27,13 @@ const StyledCard = styled.div`
     `
       color: black;
     `}
+
+  img {
+    max-width: 130%;
+    max-height: 130%;
+    object-fit: cover;
+    object-position: center bottom; /* Adjust the object position to move the starting point of the image */
+  }
 `;
 
 const Card = () => {
@@ -70,12 +77,16 @@ const Card = () => {
     }
   }, [cards]);
 
+  const getImageUrl = (imageName) => {
+    return `assets/img/${imageName}.jpg`; // Assuming the images are in the "public/assets/img" directory
+  };
+
   return (
     <>
       <CardContainer>
         {cards.map((cardId) => (
           <StyledCard key={cardId} content="영등포구">
-            영등포구
+            <img src={getImageUrl(cardId)} alt={`Image ${cardId}`} />
           </StyledCard>
         ))}
       </CardContainer>

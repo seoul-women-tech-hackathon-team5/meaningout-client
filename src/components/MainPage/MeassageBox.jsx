@@ -39,17 +39,28 @@ const StyledMessageBox = styled.div`
   }
 `;
 
+const OutsideText = styled.div`
+  font-size: 20px;
+  font-weight: bold;
+  color: black; /* Set text color to black */
+  margin-top: 20px; /* Adjust the margin-top to create space between MessageBox and OutsideText */
+  margin-left: 20px; /* Adjust the margin-left to move the text to the right */
+`;
+
 export default function MessageBox() {
   return (
-    <StyledMessageBox>
-      <div className='left-content'>
-        <div className='title'>오늘 들어온 카드</div>
-        <div className='number'>39</div>
-      </div>
-      <div className='right-content'>
-        <div className='title'>함께하는 착한 가게</div>
-        <div className='number'>150</div>
-      </div>
-    </StyledMessageBox>
+    <>
+      <StyledMessageBox>
+        <div className='left-content'>
+          <div className='title'>오늘 들어온 카드</div>
+          <div className='number'>40</div>
+        </div>
+        <div className='right-content'>
+          <div className='title'>함께하는 착한 가게</div>
+          <div className='number'>152</div>
+        </div>
+      </StyledMessageBox>
+      <OutsideText>오자 카드 구경하기</OutsideText>
+    </>
   );
 }
