@@ -9,19 +9,24 @@ const StyledAreaItem = styled.div`
   button {
     display: flex;
     align-items: center;
+    text-decoration: none; /* Remove the default underline */
+    outline: none; /* Remove the default outline */
   }
 
   .toggle-container {
     width: 100px;
-    height: 540px;
-    padding: 12px;
+    height: ${(props) => (props.isExpanded ? '570px' : '0')};
+    overflow: hidden;
+    padding: ${(props) => (props.isExpanded ? '12px' : '0')};
     border-radius: 8px;
     font-size: 16px;
     font-weight: 400;
-    color: #A9A9A9;
+    color: #a9a9a9;
     background-color: white;
     cursor: pointer;
-    border: solid 1px #D9D9D9;
+    border: ${(props) => (props.isExpanded ? 'solid 1px #d9d9d9' : 'none')};
+    position: relative;
+    transition: height 0.3s ease-in-out, padding 0.3s ease-in-out;
   }
 
   .toggle-container > div:hover {
@@ -37,29 +42,24 @@ export default function AreaItem({ title, content, onContentClick }) {
     setIsExpanded(!isExpanded);
   };
 
-  const handleContentClick = (clickedTitle) => {
-    onContentClick(clickedTitle);
+  const handleContentItemClick = (clickedItem) => {
+    onContentClick(clickedItem);
     setIsExpanded(false);
   };
 
   return (
-    <StyledAreaItem>
+    <StyledAreaItem isExpanded={isExpanded}>
       <button onClick={handleToggle}>
-        {isExpanded ? title : title}
+        {title}
         <img src='/assets/icons/toggle.svg' alt='toggle' />
       </button>
-      {isExpanded && (
-        <div className='toggle-container'>
-          {content.map((item, index) => (
-            <div
-              key={index}
-              onClick={() => handleContentClick(item)}
-            >
-              {item}
-            </div>
-          ))}
-        </div>
-      )}
+      <div className='toggle-container'>
+        {content.map((item, index) => (
+          <div key={index} onClick={() => handleContentItemClick(item)}>
+            {item}
+          </div>
+        ))}
+      </div>
     </StyledAreaItem>
   );
 }

@@ -1,123 +1,66 @@
 import styled from 'styled-components';
 
-const StyledMessageBox  = styled.div`
-    width: 334px;
-    height: 140px;
-    border: 1px solid #558BCF;
-    border-radius: 8px;
-    z-index: -10;
+const StyledMessageBox = styled.div`
+  width: 350px;
+  height: 170px;
+  background-color: #ffffff; /* White background color */
+  border: 3px solid #558BCF; /* Add border color and thickness */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  margin-right: -150px; /* Adjust the margin-right to move the MessageBox to the left */
+  margin-left: 20px; /* Adjust the margin-left to fine-tune the balance */
 
+  .left-content {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px;
+    flex-direction: column;
+    color: #558BCF; /* Set text color to #558BCF */
+  }
 
-    .today-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: #558BCF;
-        font-weight: 600;
-    }
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+  }
 
-    .number {
-        font-size: 35px;
-        font-weight: 700;
-    }
+  .number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #558BCF; /* Set text color to #558BCF */
+    margin-top: 10px; /* Adjust the margin-top to move the number below the text */
+    margin-left: 50px; /* Adjust the margin-left to move the number a bit more to the left */
+  }
 
-    @property --rotate {
-        syntax: "<angle>";
-        initial-value: 132deg;
-        inherits: false;
-      }
+  .right-content {
+    display: flex;
+    flex-direction: column;
+    color: #558BCF; /* Set text color to #558BCF */
+  }
+`;
 
-      :root {
-        --card-height: 65vh;
-        --card-width: calc(var(--card-height) / 1.5);
-      }
+const OutsideText = styled.div`
+  font-size: 20px;
+  font-weight: bold;
+  color: black; /* Set text color to black */
+  margin-top: 20px; /* Adjust the margin-top to create space between MessageBox and OutsideText */
+  margin-left: 20px; /* Adjust the margin-left to move the text to the right */
+`;
 
-    .card{
-        background: white;
-        width: 50px;
-        height: 80px;
-        padding: 3px;
-        position: relative;
-        border-radius: 6px;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        display: flex;
-        font-size: 1.5em;
-        // color: rgb(88 199 250 / 0%);
-        color: black;
-        cursor: pointer;
-        // font-family: cursive;
-    }
-          
-    .card:hover {
-        color: rgb(88 199 250 / 100%);
-        transition: color 1s;
-    }
-    .card:hover:before, .card:hover:after {
-        animation: none;
-        opacity: 0;
-    }
-    .card::before {
-        content: "";
-        width: 104%;
-        height: 102%;
-        border-radius: 8px;
-        background-image: linear-gradient(
-        var(--rotate)
-            , #5ddcff, #3c67e3 43%, #4e00c2);
-        position: absolute;
-        z-index: -1;
-        top: -1%;
-        left: -2%;
-        animation: spin 2.5s linear infinite;
-    }
-          
-    .card::after {
-        position: absolute;
-        content: "";
-        top: calc(var(--card-height) / 6);
-        left: 0;
-        right: 0;
-        z-index: -1;
-        height: 100%;
-        width: 100%;
-        margin: 0 auto;
-        transform: scale(0.8);
-        filter: blur(calc(var(--card-height) / 6));
-        background-image: linear-gradient(
-        var(--rotate)
-        , #5ddcff, #3c67e3 43%, #4e00c2);
-        opacity: 1;
-        transition: opacity .5s;
-        animation: spin 2.5s linear infinite;
-    }
-          
-    @keyframes spin {
-        0% {
-            --rotate: 0deg;
-        }
-        100% {
-            --rotate: 360deg;
-        }
-    }      
-`
-
-export default function MessageBox () {
-    return(
-        <StyledMessageBox>
-            <div className='today-card'>
-                <div>오늘 들어온 카드</div>
-                <div className='number'>40</div>
-            </div>
-            <div className='today-card'>
-                <div>함께 하는 착한 가게</div>
-                <div className='number'>152</div>
-            </div>
-        </StyledMessageBox>
-    )
+export default function MessageBox() {
+  return (
+    <>
+      <StyledMessageBox>
+        <div className='left-content'>
+          <div className='title'>오늘 들어온 카드</div>
+          <div className='number'>40</div>
+        </div>
+        <div className='right-content'>
+          <div className='title'>함께하는 착한 가게</div>
+          <div className='number'>152</div>
+        </div>
+      </StyledMessageBox>
+      <OutsideText>오자 카드 구경하기</OutsideText>
+    </>
+  );
 }
