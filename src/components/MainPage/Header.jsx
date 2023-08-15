@@ -1,40 +1,28 @@
-import styled from 'styled-components';
-import { useState } from 'react';
-import AreaItem from './AreaItem';
-import { AreaNames } from './AreaNames';
+import styled from "styled-components";
+import AreaToggle from "./AreaToggle";
 
 const StyledHeader = styled.div`
-    width: 390px;
-    height: 71px;
-    // position: fixed;
-    // top: 0;
-    margin-bottom: 28px;
-    background-color: white; /* Set background color to white */
+  width: 390px;
+  height: 71px;
+  // position: fixed;
+  // top: 0;
+  margin-bottom: 28px;
+  background-color: white; /* Set background color to white */
 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 16px;
 
-    border-bottom-style: solid;
-    border-bottom-width: 0.5px;
-`
+  border-bottom-style: solid;
+  border-bottom-width: 0.5px;
+`;
 
 export default function Header() {
-    // Area 토글 관리
-    const [currentTitle, setCurrentTitle] = useState("영등포구");
-    
-    const handleContentClick = (clickedTitle) => {
-        setCurrentTitle(clickedTitle);
-    };
 
-    return (
-        <StyledHeader>
-            <AreaItem
-                title={currentTitle}
-                content={AreaNames}
-                onContentClick={handleContentClick}
-            />
-        </StyledHeader>
-    );
+  return (
+    <StyledHeader>
+      <AreaToggle/>
+    </StyledHeader>
+  );
 }

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Header from '../components/MainPage/Header';
 import MessageBox from '../components/MainPage/MeassageBox';
 import BottomNav from '../components/UI/BottomNav';
-import Card from '../components/MainPage/Card';
+// import Card from '../components/MainPage/Card';
 
 
 const StyledMain = styled.div`
@@ -13,15 +13,15 @@ const StyledMain = styled.div`
     align-items: center;
 `
 
-const MainContent = styled.div`
-    flex: 1;
-    width: 100%;
-    overflow-y: auto; /* Enable scrolling for the Card component */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-`
+// const MainContent = styled.div`
+//     flex: 1;
+//     width: 100%;
+//     overflow-y: auto; /* Enable scrolling for the Card component */
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+// `
 
 const FixedComponents = styled.div`
     position: fixed;
@@ -42,9 +42,9 @@ const MainPage = () => {
                 <Header />
                 <CenteredMessageBox />
             </FixedComponents>
-            <MainContent>
+            {/* <MainContent>
                 <Card />
-            </MainContent>
+            </MainContent> */}
             <BottomNav type="main" />
         </StyledMain>
     );

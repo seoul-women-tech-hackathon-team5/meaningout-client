@@ -1,4 +1,5 @@
-export const AreaNames = [
+export const AreaList = [
+  '영등포구',
   '강남구',
   '강동구',
   '강북구',
@@ -18,11 +19,9 @@ export const AreaNames = [
   '성북구',
   '송파구',
   '양천구',
-  '영등포구',
   '용산구',
   '은평구',
   '종로구',
   '중구',
   '중랑구'
-
 ];
