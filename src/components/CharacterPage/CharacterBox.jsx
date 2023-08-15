@@ -57,14 +57,14 @@ export default function CharacterBox () {
                         <img src='/assets/img/oza_002.jpg'/>
                     </button>
                 </div>
-                {/* <div className='container-row'>
+                <div className='container-row'>
                     <button onClick={() => handleButtonClick('/assets/img/oza_003.jpg')}>
                         <img src='/assets/img/oza_003.jpg'/>
                     </button>
                     <button onClick={() => handleButtonClick('/assets/img/oza_004.jpg')}>
                         <img src='/assets/img/oza_004.jpg'/>
                     </button>
-                </div> */}
+                </div>
             </div>
         </StyledCharacterBox>
     )

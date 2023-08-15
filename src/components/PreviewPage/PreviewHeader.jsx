@@ -2,22 +2,24 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
 const StyledPreviewHeader = styled.div`
-width: 390px;
-height: 71px;
-margin-bottom: 28px;
+  width: 390px;
+  height: 71px;
+  margin-bottom: 28px;
 
-display: flex;
-justify-content: start;
-align-items: center;
-padding: 16px;
+  display: flex;
+  padding: 18px 128px 18px 16px;
+  align-items: center;
+  gap: 77px;
 
-border-bottom-style: solid;
-border-bottom-width: 0.5px;
+  border-bottom: 1px solid #D9D9D9;
 
 .header-title {
-    margin-left: 85px;
+    color: rgba(0, 0, 0, 0.8);
+    font-family: Noto Sans KR;
     font-size: 20px;
-    font-weight: 600;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 `
