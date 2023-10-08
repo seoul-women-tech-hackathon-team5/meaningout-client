@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import Header from './components/Header';
 import MessageBox from './components/MeassageBox';
-import BottomNav from '../components/UI/BottomNav';
-// import Card from '../components/MainPage/Card';
+import BottomNav from '../components/BottomNav';
 
 
 const StyledMain = styled.div`

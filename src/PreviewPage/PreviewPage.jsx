@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React, { useRef } from "react"; // eslint-disable-line no-unused-vars
-import PreviewHeader from "../components/PreviewPage/PreviewHeader";
-import PreviewCard from "../components/PreviewPage/PreivewCard";
+import PreviewHeader from "./components/PreviewHeader";
+import PreviewCard from "./components/PreivewCard";
 import { useNavigate } from "react-router-dom";
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
@@ -26,8 +26,8 @@ const EditButton = styled.button`
   width: 165px;
   height: 48px;
   border-radius: 12px;
-  border: 1px solid #558BCF;
-  color: #558BCF;
+  border: 1px solid #558bcf;
+  color: #558bcf;
   margin-bottom: 7px;
   margin-right: 3px;
 `;
@@ -36,8 +36,8 @@ const HomeButton = styled.button`
   width: 165px;
   height: 48px;
   border-radius: 12px;
-  border: 1px solid #558BCF;
-  color: #558BCF;
+  border: 1px solid #558bcf;
+  color: #558bcf;
   margin-bottom: 7px;
 `;
 
@@ -46,7 +46,7 @@ const SaveButton = styled.button`
   height: 48px;
   border-radius: 12px;
   color: white;
-  background-color: #558BCF;
+  background-color: #558bcf;
 `;
 
 const PreviewPage = () => {
@@ -84,7 +84,7 @@ const PreviewPage = () => {
             onClick={() => {
               navigate("/main");
             }}
-            >
+          >
             홈으로
           </HomeButton>
         </ButtonContainer>

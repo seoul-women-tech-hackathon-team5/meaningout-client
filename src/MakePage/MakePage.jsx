@@ -37,7 +37,7 @@ const StyledMake = styled.div`
     height: 48px;
     border-radius: 8px;
     border: 0;
-    background-color: #558BCF;
+    background-color: #558bcf;
     font-size: 16px;
     color: white;
     cursor: pointer;

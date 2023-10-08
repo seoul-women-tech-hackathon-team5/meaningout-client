@@ -5,7 +5,7 @@ import 'swiper/css/pagination';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import "../styles/swiper.css";
+import "../../styles/swiper.css";
 
 const SwiperContainer = styled.div`
     width: 100%;

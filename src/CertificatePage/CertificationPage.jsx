@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import CertificateHeader from './components/CertificateHeader';
-import Receipt from './components/Receipt';
+import Receipt from './components/Receipt'
 import { useNavigate } from 'react-router-dom';
 
 
